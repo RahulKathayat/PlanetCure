@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import {cn} from "../../utils/cn";
 import { TextGenerateEffect } from "./text-generate-effect";
+import { HoverBorderGradient } from "./hover-border-gradient";
 
 export const BackgroundBeams = React.memo(
   ({ className }: { className?: string }) => {
@@ -134,9 +135,16 @@ export const BackgroundBeams = React.memo(
             </radialGradient>
           </defs>
         </svg>
-        <div className="flex flex-col mt-20 gap-5">
+        <div className="flex flex-col mt-20 gap-5 justify-center items-center">
             <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-600 text-center">Welcome to Planet Cure</h1>
-            <TextGenerateEffect words="Where health meets technology, providing a cherishful life"/>
+            <TextGenerateEffect words="Where health meets technology, providing a cherishful life" className=" mb-5"/>
+            <HoverBorderGradient
+                containerClassName="rounded-full"
+                as="button"
+                className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+            >
+                <span>Get Started</span>
+            </HoverBorderGradient>
         </div>
       </div>
     );
