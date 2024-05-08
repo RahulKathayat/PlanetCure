@@ -33,7 +33,7 @@ export default function RootLayout({
         <NextSSRPlugin
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <div className="h-screen grid grid-rows-[auto,1fr]">
+        <div className="h-screen flex flex-col gap-2">
           <TopNav/>
           <main className=" overflow-y-auto">
             {children}
