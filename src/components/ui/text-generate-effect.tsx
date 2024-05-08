@@ -15,16 +15,22 @@ export const TextGenerateEffect = ({
   useEffect(() => {
     if(scope.current){
 
-        animate(
-          "span",
-          {
-            opacity: 1,
-          },
-          {
-            duration: 2,
-            delay: stagger(0.2),
-          }
-        );
+        const animationPromise = animate(
+            "span",
+            {
+              opacity: 1,
+            },
+            {
+              duration: 2,
+              delay: stagger(0.2),
+            }
+          );
+      
+          // Option 1: Await the promise
+          const handleAnimation = async () => {
+            await animationPromise;
+          };
+          handleAnimation();
     }
   }, [scope.current,animate]);
 
