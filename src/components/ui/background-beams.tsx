@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {cn} from "../../utils/cn";
-// import { TextGenerateEffect } from "./text-generate-effect";
+import { TextGenerateEffect } from "./text-generate-effect";
 
 export const BackgroundBeams = React.memo(
   ({ className }: { className?: string }) => {
@@ -136,7 +136,7 @@ export const BackgroundBeams = React.memo(
         </svg>
         <div className="flex flex-col mt-20 gap-5">
             <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-600 text-center">Welcome to Planet Cure</h1>
-            {/* <TextGenerateEffect words="Where health meets technology, providing a cherishful life" className="text-center"/> */}
+            <TextGenerateEffect words="Where health meets technology, providing a cherishful life"/>
         </div>
       </div>
     );
