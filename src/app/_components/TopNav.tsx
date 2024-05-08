@@ -1,4 +1,5 @@
 import {SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { UploadButton } from '~/utils/uploadthing';
 
 const TopNav = () => {
     return (
@@ -9,6 +10,7 @@ const TopNav = () => {
                 <SignInButton />
             </SignedOut>
             <SignedIn>
+                <UploadButton endpoint="imageUploader"/>
                 <UserButton />
             </SignedIn>
         </div>
