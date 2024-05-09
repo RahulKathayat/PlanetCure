@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap'); */
 .sidebar {
     min-height: 90vh;
     display: inline-flex;
@@ -6,7 +6,7 @@
     justify-content: space-between;
     background: #020817;
     padding: 25px 15px;
-    font-family: Outfit;
+    /* font-family: Outfit; */
   }
   
   .sidebar img {
