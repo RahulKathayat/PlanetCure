@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import '../styles/aimain.css'
 import { Context } from "../context/Context";
+import { useUser } from '@clerk/nextjs';
 type Props = {}
 interface ContextType {
     onSet: (value: any) => void;
@@ -31,6 +32,7 @@ interface ContextType {
     )
   }
 const AiMain = (props: Props) => {
+  const {user} = useUser();
     const {
         onSet,
         recentPrompt,
@@ -77,7 +79,7 @@ const AiMain = (props: Props) => {
         ) : (
           <div className="result">
             <div className="result-title">
-                <UserIcon />
+              <img src={user?.imageUrl} alt="no" />
               <p>{recentPrompt}</p>
             </div>
             <div className="result-data">

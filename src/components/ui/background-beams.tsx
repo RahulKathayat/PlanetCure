@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import {cn} from "../../utils/cn";
 import { TextGenerateEffect } from "./text-generate-effect";
 import { HoverBorderGradient } from "./hover-border-gradient";
+import Link from "next/link";
 
 export const BackgroundBeams = React.memo(
   ({ className }: { className?: string }) => {
@@ -137,14 +138,16 @@ export const BackgroundBeams = React.memo(
         </svg>
         <div className="flex flex-col mt-20 gap-5 justify-center items-center">
             <h1 className="text-6xl font-bold animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-center">Welcome to Planet Cure</h1>
-            <TextGenerateEffect words="Where health meets technology, providing a cherishful life" className=" mb-5"/>
-            <HoverBorderGradient
-                containerClassName="rounded-full"
-                as="button"
-                className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
-            >
-                <span>Get Started</span>
-            </HoverBorderGradient>
+            <TextGenerateEffect words="An AI powered Health Monitoring System" className=" mb-5"/>
+            <Link href="/gemini-ai" >
+              <HoverBorderGradient
+                  containerClassName="rounded-full"
+                  as="button"
+                  className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+              >
+                  <span>Get Started with our AI Model</span>
+              </HoverBorderGradient>
+            </Link>
         </div>
       </div>
     );
