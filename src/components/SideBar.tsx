@@ -47,7 +47,7 @@ export default function SideNavbar({}: Props) {
             title: "Dashboard",
             href: "/dashboard",
             icon: LayoutDashboard,
-            variant: "default"
+            variant: "ghost"
           },
           {
             title: "Users",
