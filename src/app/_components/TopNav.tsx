@@ -1,10 +1,13 @@
 import {SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import { SimpleUploadButton } from './SimpleUploadButton';
+import Link from 'next/link';
 
 const TopNav = () => {
     return (
       <nav className="flex w-full items-center justify-between p-4 text-xl font-semibold border-b bg-[dark]">
         <div>Planet Cure</div>
+        <Link href='/'>Home</Link>
+        <Link href='/dashboard'>Dashboard</Link>
         <div className='flex flex-row gap-4 item-center'>
             <SignedOut>
                 <SignInButton />
