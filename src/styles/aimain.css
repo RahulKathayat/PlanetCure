@@ -51,7 +51,7 @@
   .main .card {
     height: 200px;
     padding: 15px;
-    background: #6c12bb;
+    background: #29103b;
     border-radius: 10px;
     position: relative;
     cursor: pointer;
@@ -72,7 +72,7 @@
   }
   
   .main .card:hover {
-    background: #14519b;
+    background: #4e6c90;
   }
   
   
@@ -90,7 +90,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      background: #c0a0d7;
+      background: #b4b1b7;
       padding: 10px 20px;
       border-radius: 50px;
   }

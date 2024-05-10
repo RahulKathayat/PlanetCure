@@ -5,9 +5,12 @@ import {cn} from "../../utils/cn";
 import { TextGenerateEffect } from "./text-generate-effect";
 import { HoverBorderGradient } from "./hover-border-gradient";
 import Link from "next/link";
+import { Button } from "./button";
+import { useRouter } from "next/navigation";
 
 export const BackgroundBeams = React.memo(
   ({ className }: { className?: string }) => {
+    const router = useRouter();
     const paths = [
       "M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875",
       "M-373 -197C-373 -197 -305 208 159 335C623 462 691 867 691 867",
@@ -136,7 +139,7 @@ export const BackgroundBeams = React.memo(
             </radialGradient>
           </defs>
         </svg>
-        <div className="flex flex-col mt-20 gap-5 justify-center items-center">
+        <div className="flex flex-col mt-20 gap-8 justify-center items-center">
             <h1 className="text-6xl font-bold animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-center">Welcome to Planet Cure</h1>
             <TextGenerateEffect words="An AI powered Health Monitoring System" className=" mb-5"/>
             <Link href="/gemini-ai" >
@@ -148,6 +151,10 @@ export const BackgroundBeams = React.memo(
                   <span>Get Started with our AI Model</span>
               </HoverBorderGradient>
             </Link>
+            <div className="font-xl font-bold">OR</div>
+            <Button variant="default" onClick={()=>router.push('/video-conferencing')}>
+              <span className="font-extrabold">Chat with our Experts</span>
+            </Button>
         </div>
       </div>
     );

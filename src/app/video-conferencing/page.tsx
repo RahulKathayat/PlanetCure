@@ -11,15 +11,15 @@ const page = () => {
         router.push(`/video-conferencing/${value}`);
     },[router,value]);
   return (
-    <div className='flex gap-4 h-full justify-center items-center'>
+    <div className='flex gap-4 h-[10rem] justify-center items-center'>
         <Input 
         value={value}
         type='text'
         onChange={(e) => setValue(e.target.value)}
-        placeholder='Enter room id'
-        className=' placeholder:text-black mr-2 text-black w-44'
+        placeholder='Enter Room ID'
+        className=' placeholder:text-white mt- mr-2 text-white w-44 border-2 scale-110'
         />
-        <Button type="button" onClick={handleRoomJoin}>Join</Button>
+        <Button type="button" onClick={handleRoomJoin} variant="secondary">Join</Button>
     </div>
   )
 }
