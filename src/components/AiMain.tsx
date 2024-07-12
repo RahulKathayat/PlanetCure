@@ -62,27 +62,27 @@ const AiMain = (props: Props) => {
           <>
             <div className="greet">
               <p>
-                <span>Hello,Dev</span>
+                <span>Hello there,</span>
               </p>
               <p>How Can I Help You Today</p>
             </div>
             <div className="cards">
               <div className="card">
                 <p>
-                  Suggest a beautoful places to see on an upcoming road trip
+                  What are the key differences between Type 1 and Type 2 diabetes?
                 </p>
                 <div><UserIcon /></div>
               </div>
               <div className="card">
-                <p>Briefly summarize this concept: urban Planning</p>
+                <p>What are the recommended vaccinations for infants?</p>
                 <div><UserIcon /></div>
               </div>
               <div className="card">
-                <p>Brainstorm team bonding activites for our work</p>
+                <p>Explain the importance of maintaining a healthy body weight.</p>
                 <div><UserIcon /></div>
               </div>
               <div className="card">
-                <p>Improve the readability of the following code</p>
+                <p>What are the health benefits of quitting smoking?</p>
                 <div><UserIcon /></div>
               </div>
             </div>
