@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import '../styles/aimain.css'
 import { Context } from "../context/Context";
 import { useUser } from '@clerk/nextjs';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 type Props = {}
 interface ContextType {
     onSet: (value: any) => void;
@@ -33,15 +34,25 @@ interface ContextType {
   }
 const AiMain = (props: Props) => {
   const {user} = useUser();
-    const {
-        onSet,
-        recentPrompt,
-        showResult,
-        loading,
-        resultData,
-        setinput,
-        input,
-      } = useContext<ContextType>(Context);
+  const {
+      onSet,
+      recentPrompt,
+      showResult,
+      loading,
+      resultData,
+      setinput,
+      input,
+    } = useContext<ContextType>(Context);
+
+  const {
+    transcript,
+    listening,
+    browserSupportsSpeechRecognition
+  } = useSpeechRecognition();
+
+  useEffect(()=>{
+    setinput(transcript);
+  },[transcript]);
   return (
     <div className='main'>
  
@@ -107,7 +118,11 @@ const AiMain = (props: Props) => {
             />
             <div>
                 <img src="/gallery_icon.png" alt="no" />
-                <img src="/mic_icon.png" alt="no" />
+                {listening ? (
+                  <img src="/cancel2.png" alt="no" onClick={SpeechRecognition.stopListening}/>
+                ) : (
+                  <img src="/mic_icon.png" alt="no" onClick={()=>SpeechRecognition.startListening()}/>
+                )}
            {input?
             // <img onClick={() => onSet(undefined)} src="../../public/send-icon.png" alt="no" />
             <button onClick={()=>onSet(undefined)}><SendIcon/></button>
@@ -115,7 +130,7 @@ const AiMain = (props: Props) => {
             </div>
           </div>
           <p className="bottom-info">
-            Gemini may display inaccurate information, including about peopel,
+            Gemini may display inaccurate information, including about people,
             so double-check its responses. Your privacy and Gemini Apps.
           </p>
         </div>

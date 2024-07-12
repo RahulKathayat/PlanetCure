@@ -1,5 +1,6 @@
 import "~/styles/globals.css";
 import "@uploadthing/react/styles.css";
+import 'regenerator-runtime/runtime'
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { ourFileRouter } from "~/app/api/uploadthing/core";
 import { Inter } from "next/font/google";
